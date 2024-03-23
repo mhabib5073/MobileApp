@@ -1,0 +1,21 @@
+{% extends 'mobileApp/base.html' %}
+
+{% block body %}
+    {% for product in product_list %}
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <img class="card" height="150px" src="{{ product.prod_image }}"/>
+        </div>
+        <div class="col-md-4">
+            <h2>{{product.prod_name}}</h2>
+            <h3>{{product.prod_desc}}</h3>
+            <h4>₹ {{product.prod_price}}</h4>
+            <h5>{{ product.user_name }}</h5>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'mobileApp:detail' product.id %}" class="btn btn-success">Details</a>
+        </div>
+    </div>
+
+    {% endfor %}
+{% endblock %} 

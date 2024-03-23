@@ -1,0 +1,17 @@
+{% extends 'mobileApp/base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="card" height="400px" src="{{ product.prod_image }}"/>
+        </div>
+        <div class="col-md-6">
+            <h1>{{product.prod_name}}</h1>
+            <h2>{{product.prod_desc}}</h2>
+            <h3>₹ {{product.prod_price}}</h3>
+            <a href="{% url 'mobileApp:delete' product.id %}" >Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
